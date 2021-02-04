@@ -1,0 +1,165 @@
+$primary: #15173D;
+$secondary: #91D4CF;
+$tertiary: #D1AD70;
+
+body {
+  display: flex;
+  align-content: center;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Poiret One', sans-serif;
+  text-decoration: none;
+  background-image: url('/images/art_deco_pattern.jpg');
+  top: 0;
+  left: 0;
+  color: #D1AD70;
+}
+a {
+  text-decoration: none;
+  color: #91D4CF;
+}
+h1 {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 40px;
+  background-color:rgba(0, 0, 0, 0.7);
+  max-width: 400px;
+}
+.navbar {
+  margin: 15px;
+  margin-right: 25px;
+  ul{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    margin: 0 auto;
+    color: $tertiary;
+    li {
+      margin: 15px;
+      padding: 15px;
+      list-style: none;
+      text-decoration: none;
+      color: $tertiary;
+      background-color:rgba(0, 0, 0, 0.7);
+    }
+    li :hover {
+      font-weight: bold;
+      color: white;
+    }
+  }
+}
+.homepage {
+  margin: 0 auto;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.trendingdiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 5px;
+  margin: 0 auto;
+  margin-top:30px;
+  width: 75%;
+  .trendingcard {
+    margin: 6px;
+    border: 2px solid $tertiary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+  .trendingposter {
+    width: 154px;
+  }
+}
+.similarfilmsdiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 5px;
+  margin: 0 auto;
+  width: 75%;
+  .similarcard {
+    margin: 6px;
+    text-align: center;
+    border: 2px solid $tertiary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+  .similarposter {
+    width: 154px;
+    align-content: center;
+  }
+}
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.newmoviediv {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 5px;
+  margin: 0 auto;
+  width: 70%;
+  .newmoviecard {
+    margin: 6px;
+    text-align: center;
+    border: 2px solid $tertiary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+  .newmovieposter{
+    width: 154px;
+    align-content: center;
+  }
+}
+.pagination {
+  margin: 0 auto;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  background-color:rgba(0, 0, 0, 0.7);
+  max-width: 250px;
+  cursor: pointer;
+}
+.item {
+  padding-left: 7px;
+}
+.singlemovie {
+  margin: 0 auto;
+  margin: 40px 40px 0 40px;
+  display: flex;
+  flex-direction: row;
+  
+  .movieImg {
+    display: flex;
+    padding: 10px;
+    border: 2px solid $tertiary;
+    background-color:rgba(0, 0, 0, 0.87);
+  }
+  .movieInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin: 25px;
+    background-color:rgba(0, 0, 0, 0.87);
+    .movieOverview{
+      max-width: 500px;
+    }
+  }
+}
+.similarLink {
+  font-size: 30px;
+}
