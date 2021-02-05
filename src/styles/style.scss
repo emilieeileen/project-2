@@ -9,15 +9,17 @@ body {
   justify-content: center;
   font-family: 'Poiret One', sans-serif;
   text-decoration: none;
-  background-image: url('/images/art_deco_pattern.jpg');
+  background-image: url('https://i.imgur.com/Mp0qhBN.jpg');
   top: 0;
   left: 0;
   color: #D1AD70;
 }
+
 a {
   text-decoration: none;
   color: #91D4CF;
 }
+
 h1 {
   text-align: center;
   margin: 0 auto;
@@ -25,6 +27,7 @@ h1 {
   background-color:rgba(0, 0, 0, 0.7);
   max-width: 400px;
 }
+
 .navbar {
   margin: 15px;
   margin-right: 25px;
@@ -48,6 +51,7 @@ h1 {
     }
   }
 }
+
 .homepage {
   margin: 0 auto;
   margin-top: 10px;
@@ -55,6 +59,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
 }
+
 .trendingdiv {
   display: flex;
   justify-content: center;
@@ -76,6 +81,7 @@ h1 {
     width: 154px;
   }
 }
+
 .similarfilmsdiv {
   display: flex;
   justify-content: center;
@@ -83,6 +89,7 @@ h1 {
   flex-wrap: wrap;
   padding: 5px;
   margin: 0 auto;
+  margin-top: 30px;
   width: 75%;
   .similarcard {
     margin: 6px;
@@ -98,11 +105,14 @@ h1 {
     align-content: center;
   }
 }
+
 .container {
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
+
 .newmoviediv {
   display: flex;
   justify-content: center;
@@ -111,6 +121,7 @@ h1 {
   padding: 5px;
   margin: 0 auto;
   width: 70%;
+  margin-bottom: 20px;
   .newmoviecard {
     margin: 6px;
     text-align: center;
@@ -125,18 +136,22 @@ h1 {
     align-content: center;
   }
 }
+
 .pagination {
   margin: 0 auto;
   font-size: 20px;
   display: flex;
   justify-content: center;
   background-color:rgba(0, 0, 0, 0.7);
-  max-width: 250px;
+  max-width: 300px;
   cursor: pointer;
 }
+
 .item {
-  padding-left: 7px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
+
 .singlemovie {
   margin: 0 auto;
   margin: 40px 40px 0 40px;
@@ -160,6 +175,37 @@ h1 {
     }
   }
 }
+
 .similarLink {
   font-size: 30px;
+}
+
+.nosimilar {
+  margin-top: 100px;
+  background-color:rgba(0, 0, 0, 0.87);
+}
+
+.selectGenre {
+  background-color: $tertiary;
+  color: $primary;
+  font-family: 'Poiret One', sans-serif;
+  margin: 10px;
+  font-size: 16px;
+}
+
+.searchFilms {
+  color: $secondary;
+  border: 1px solid $tertiary;
+  font-family: 'Poiret One', sans-serif;
+  background-color:rgba(0, 0, 0, 0.87);
+  margin: 10px;
+  height: 25px;
+  width: 200px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $secondary;
+  font-weight: bold;
 }

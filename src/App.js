@@ -9,7 +9,6 @@ import axios from 'axios'
 import './styles/style.scss'
 
 
-
 const App = () => (
   <BrowserRouter>
     <NavBar />
@@ -35,7 +34,10 @@ const Home = () => {
   }, [])
 
   if (loading){
-    return <h1>Loading!!!!</h1>
+    return <>
+      <img src='https://i.imgur.com/jKTJEFh.png'/>
+      <h1>Loading films...</h1>
+    </>
   }
 
   return <div className='homepage'> 

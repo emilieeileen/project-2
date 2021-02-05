@@ -7,7 +7,6 @@ export default function Movie({ match }) {
   const [movie, updateMovie] = useState({})
   const [loading, updateLoading] = useState(true)
   
-
   useEffect(() => {
     axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.API_KEY}&language=en-US`)
       .then(({ data }) => {
@@ -17,7 +16,10 @@ export default function Movie({ match }) {
   }, [])
 
   if (loading){
-    return <h1>Loading!!!!</h1>
+    return <>
+      <img src='https://i.imgur.com/jKTJEFh.png'/>
+      <h1>Loading films...</h1>
+    </>
   }
 
   return <div className='singlemovie'>

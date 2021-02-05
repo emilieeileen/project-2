@@ -12,8 +12,7 @@ export default function Search({ match }) {
   const [search, updateSearch] = useState('')
   const [activePage, setActivePage] = useState('')
   const [apiUrl, setApiUrl] = useState(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`)
-  //const plainUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${GenreID}&with_keywords=${searchValue}`
-
+  const [pageNo, updatePageNo] = useState('1')
 
   useEffect(() => {
     axios.get(apiUrl)
@@ -23,29 +22,55 @@ export default function Search({ match }) {
       })
   }, [apiUrl])
   
+  useEffect(() => {
+    axios.get(apiUrl)
+      .then(({ data }) => {
+        updateDiscoverMovies(data.results)
+        updateLoading(false)
+      })
+  }, [genre])
+
+  useEffect(() => {
+    axios.get(apiUrl)
+      .then(({ data }) => {
+        updateDiscoverMovies(data.results)
+        updateLoading(false)
+      })
+  }, [search]) 
+
   if (loading) {
-    return <h1>Loading!!!!</h1>
+    return <>
+      <img src='https://i.imgur.com/jKTJEFh.png'/>
+      <h1>Loading films...</h1>
+    </>
   }
   
   function filterMovies() {
     return discoverMovies.filter(movie => {
       return (genre === 'All' || (movie.genre_ids.includes(Number(genre)))) 
-        && movie.original_title.toLowerCase().includes(search.toLowerCase())
+        && movie.title.toLowerCase().includes(search.toLowerCase())
     })
   }
    
-  const onChange = (page, pageInfo) => {
+  const pageChange = (page, pageInfo) => {
     setActivePage(pageInfo.activePage)
-    setApiUrl(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageInfo.activePage}`)
+    if (genre === 'All' && search === '') {
+      setApiUrl(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageInfo.activePage}`)
+    } else if (genre === 'All') {
+      setApiUrl(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageInfo.activePage}&with_genres=${Number(genre)}&with_keywords=${search}`)
+    } else {
+      setApiUrl(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageInfo.activePage}&with_genres=${Number(genre)}&with_keywords=${search}`)
+    }
+    updatePageNo(pageInfo.activePage)
   }
 
-  //{setApiUrl(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageNo}&with_genres=${Number(genre)}`)}
-
+  
   return <>
     <div className="container">
-      <select className='selectGenre' onChange={(event) => 
+      <select className='selectGenre' onChange={(event) => {
         updateGenre(event.target.value) 
-      }>
+        setApiUrl(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageNo}&with_genres=${Number(event.target.value)}&with_keywords=${search}`)
+      }}>
         <option>All</option>
         <option value="28">Action</option>
         <option value="12">Adventure</option>
@@ -67,9 +92,11 @@ export default function Search({ match }) {
         <option value="10752">War</option>
         <option value="37">Western</option>
       </select>
-      <input className='searchFilms' onChange={(event) => updateSearch(event.target.value)} placeholder="Search..."/>
+      <input className='searchFilms' onChange={(event) => {
+        updateSearch(event.target.value)
+        setApiUrl(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageNo}&with_genres=${Number(genre)}&with_keywords=${event.target.value}}`)      
+      }} placeholder="Search Movie Titles..."/>
     </div>
-    
     <div className='newmoviediv'>
       {filterMovies().map((newmovie, i) => {
         return <Link key={newmovie.id} to={`/project-2/movie/${newmovie.id}`}>
@@ -83,10 +110,12 @@ export default function Search({ match }) {
     <div className='pagination'>
       <Pagination 
         activePage={activePage}
-        onPageChange={onChange}
+        onPageChange={pageChange}
         totalPages={500}
         ellipsisItem={'. . .'}/>
     </div>
   </>
 }
+
+
 
