@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import NavBar from './components/Navbar'
 import Movie from './components/Movie'
 import Similar from './components/Similar'
+import Genres from './components/Genres'
 import Search from './components/Search'
 import axios from 'axios'
 import './styles/style.scss'
@@ -14,6 +15,7 @@ const App = () => (
     <NavBar />
     <Switch>
       <Route exact path="/project-2" component={Home}/>
+      <Route path="/project-2/genres/" component={Genres}/>
       <Route path="/project-2/search/" component={Search}/>
       <Route path="/project-2/similarfilms/:id" component={Similar}/> 
       <Route path="/project-2/movie/:id" component={Movie}/>

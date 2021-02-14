@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { Link } from 'react-router-dom'
 
 export default function Navbar() {
@@ -8,6 +7,9 @@ export default function Navbar() {
     <ul>
       <li>
         <Link to={'/project-2/search'}>Search</Link>
+      </li>
+      <li>
+        <Link to={'/project-2/genres/'}>Genres</Link>
       </li>
       <li>
         <Link to={'/project-2'}>Home</Link>

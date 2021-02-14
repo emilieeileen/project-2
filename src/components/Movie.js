@@ -21,9 +21,14 @@ export default function Movie({ match }) {
       <h1>Loading films...</h1>
     </>
   }
+  
+  let imageSrc = `https://image.tmdb.org/t/p/w342${movie.poster_path}`
+  if (`${movie.poster_path}` === 'null') {
+    imageSrc = 'https://i.imgur.com/tl0tdJ8.png'
+  }
 
   return <div className='singlemovie'>
-    <img className='movieImg' src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`} alt="Coming soon"/>
+    <img className='movieImg' src={imageSrc} alt="Coming soon"/>
     <div className='movieInfo'>
       <h1>{movie.title}</h1>
       <h3 className='movieTag'>{movie.tagline}</h3>

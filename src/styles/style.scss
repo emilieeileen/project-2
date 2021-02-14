@@ -162,6 +162,7 @@ h1 {
     display: flex;
     padding: 10px;
     border: 2px solid $tertiary;
+    width: 320px;
     background-color:rgba(0, 0, 0, 0.87);
   }
   .movieInfo {
@@ -190,7 +191,8 @@ h1 {
   color: $primary;
   font-family: 'Poiret One', sans-serif;
   margin: 10px;
-  font-size: 16px;
+  padding: 8px 15px;
+  font-size: 20px;
 }
 
 .searchFilms {
@@ -201,7 +203,8 @@ h1 {
   margin: 10px;
   height: 25px;
   width: 200px;
-  font-size: 17px;
+  padding: 8px 15px;
+  font-size: 20px;
   font-weight: bold;
 }
 
