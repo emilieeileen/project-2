@@ -1,4 +1,4 @@
-# Friday Night Films: a React Acpplication
+# Friday Night Films: a React Acpplication 
 
 ## Tasks
 * **Consume a public API** – this could be anything but it must make sense for your project.
@@ -20,6 +20,10 @@
 ## Plan
 
 ## Functiuonality
+
+### Home Page
+### Search & Genres
+### Single Movie and Similar Films
 
 ## Bugs
 
