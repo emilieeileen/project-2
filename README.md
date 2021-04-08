@@ -1,8 +1,11 @@
+### ![GA](https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png) General Assembly, Software Engineering Immersive
+
 # Friday Night Films: a React Application 
 
 ## Overview
 In this 48 hour project, my partner and I created a React app using an existing API from The Movie DB. 
 
+You can view the project here (mobile or desktop): https://emilieeileen.github.io/project-2/
 ## Tasks
 * **Consume a public API** – this could be anything but it must make sense for your project.
 * **Have several components** - At least one classical and one functional.
@@ -22,6 +25,23 @@ In this 48 hour project, my partner and I created a React app using an existing 
 
 ### API courtesy of https://www.themoviedb.org/
 
+## Screenshots (using It's a Wonderful Life as the Film Example)
+
+Homepage with Trending Films
+
+![Home page with the Trending Films](src/images/homepage.png)
+
+Single Movie Page for It's a Wonderful Life
+![Single Movie Page](src/images/singlemovie.png)
+
+Similar Films to It's a Wonderful Life
+![Similar Films Page](src/images/similarfilms.png)
+
+Search page searching for the keyword 'wonderful'
+![Search page searching It's a Wonderful Life](src/images/search.png)
+
+Genre Page looking up Thrillers
+![Genre page looking up Thrillers](src/images/genre.png)
 ## Plan
 From the beginning, we knew we wanted to work with a film API as there were many accessible and well documented APIs out there for us to be creative with. Looking at other movie database websites, we noted many had similar layouts and color themes, which led u to the decision to create something that visually stood out. Using a color pallette designed from an old Hollywood theatre, we decided on an Art-Deco, Golden Age of Hollywood design for our page. The color pallette also proved useful as the dark blue, light teal and gold tones matched well as a background for many of the movie posters on the database. We also found the PoiretOne font fit in perfectly with our theme, giving our website a vintage, classic feel while showing the latest modern films.
 
@@ -196,4 +216,5 @@ if (similarFilms.length === 0) {
 
 ## Lessons Learned
 Both myself and Vesna really enjoyed the paired programming experience. Since this project was only 48 hours, we divided up the work and helped each other when we got stuck on bugs. This allowed us to work to our strengths, splitting up work based on interests. We were both very proud of the result and greatly enjoyed the paired programming experience.
-If we were to approach this project again, we may look at a styling framework, such as Bulma or Bootstrap. We chose not t use one as neither of us were fully comfortable with them at the time, but given our exposure to them in subsequent projects, it would present a new and interesting challenge. 
+
+If we were to approach this project again, we may look at a styling framework, such as Bulma or Bootstrap. We chose not to use one as neither of us were fully comfortable with them at the time, but given our exposure to them in subsequent projects, it would present a new and interesting challenge. 
