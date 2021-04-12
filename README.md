@@ -215,12 +215,14 @@ if (similarFilms.length === 0) {
 - When on the Genres drop down, if you move to one genre and then return to All Genres the films displayed remain as the last genre selected.
 
 ## Wins and Challenges
-# Wins
+### Wins
 - Successfully mapping the API data onto a webpage, using a hidden API key
+- Creating a front end filtering to display results per the user's parameters
+- Creating custom loading images and placeholder images for movie's without posters
 
-# Challenges
+### Challenges
 - Solving the issues with the Discover endpoints. This was the most challenging aspect of the project and I am proud that we found a way to have user filter by searching keywords and genres, even if it is on separate pages.
-- 
+
 ## Lessons Learned
 Both myself and Vesna really enjoyed the paired programming experience. Since this project was only 48 hours, we divided up the work and helped each other when we got stuck on bugs. This allowed us to work to our strengths, splitting up work based on interests. We were both very proud of the result and greatly enjoyed the paired programming experience.
 
