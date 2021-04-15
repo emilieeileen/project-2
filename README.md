@@ -221,7 +221,7 @@ if (similarFilms.length === 0) {
 - Creating custom loading images and placeholder images for movie's without posters
 
 ### Challenges
-- Solving the issues with the Discover endpoints. This was the most challenging aspect of the project and I am proud that we found a way to have user filter by searching keywords and genres, even if it is on separate pages.
+- Solving the issues with the Discover endpoints. This was the most challenging aspect of the project and I am proud that we found a way to have user filter by searching keywords and genres, even if it is on separate pages. I have described the solution earlier on in this ReadMe.
 
 ## Lessons Learned
 Both myself and Vesna really enjoyed the paired programming experience. Since this project was only 48 hours, we divided up the work and helped each other when we got stuck on bugs. This allowed us to work to our strengths, splitting up work based on interests. We were both very proud of the result and greatly enjoyed the paired programming experience.
