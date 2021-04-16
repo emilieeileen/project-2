@@ -88,10 +88,10 @@ const Home = () => {
 }
 ```
 
-### Search page & Genres page
-While TMDB has many endpoints to filter films, we decided to focus on two categories, genres and keywords. Originally, we attempted to hav both of these filters on one Search pag, but given the nature of the endpoints, we separated them into two pages. 
+### Search & Genres 
+While TMDB has many endpoints to filter films, we decided to focus on two categories, genres and keywords. Originally, we attempted to have both of these filters on one Search page, but given the nature of the endpoints, we separated them into two pages. 
 
-To filter the genre, we created a dropdown menu which list all the genres. Each genre had a numerical value, which corresponded to the id number given by the database. When the page first loads, we have an axios request fetch the basic *Discover* endpoint, showing films by popularity ranking. As the user selects a genre, the APIUrl changes so only films frm that genre are shown. 
+To filter the genre, we created a dropdown menu which list all the genres. Each genre had a numerical value, which corresponded to the id number given by the database. When the page first loads, we have an axios request fetch the basic *Discover* endpoint, showing films by popularity ranking. As the user selects a genre, the APIUrl changes so only films from that genre are shown. 
 ``` js
 const [apiUrl, setApiUrl] = useState(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`)
 
@@ -135,7 +135,7 @@ const pageChange = (page, pageInfo) => {
   }
   ```
 
-The pagination component was placed underneath the displayed items, allowing users to click through pages while still being able to view the 20 results per page. The style of the Pagniation was taken from Semantic UI, which kept a simplistic design that fit our art deco theme. We used flexbox CSS styling to display the movie posters on both pages, using h set sizes of the posters to help create the grid of results. We liked how this provided a clean set of results that consistent throughout the website.
+The pagination component was placed underneath the displayed items, allowing users to click through pages while still being able to view the 20 results per page. The style of the Pagniation was taken from Semantic UI, which kept a simplistic design that fit our art deco theme. We used flexbox CSS styling to display the movie posters on both pages, using the set sizes of the posters to help create the grid of results. We liked how this provided a clean set of results that consistent throughout the website.
 
 ```js
  <div className='pagination'>
@@ -162,7 +162,7 @@ Using a flexbox design, we wanted to simultaneously highlight teh movie posters,
     </div>
   </div>
   ```
-We wanted to use the *Similar Films* option from the database as way to include an additional component to the project. As shown above, each movie page links to a Similar films page, where users can see similar films to the one they selected. Using the match similarly to how it was used on the *SingleMovie* page, we called the movie ID to display the array of similar films. this array was then mapped onto a flexbox grid, with teh movie posters acting as the cards. The user can click on the poster to return that films' *SingleMovie* page, just like on th *Genre* and *Search* pages. 
+We wanted to use the *Similar Films* option from the database as way to include an additional component to the project. As shown above, each movie page links to a Similar films page, where users can see similar films to the one they selected. Using the match similarly to how it was used on the *SingleMovie* page, we called the movie ID to display the array of similar films. this array was then mapped onto a flexbox grid, with teh movie posters acting as the cards. The user can click on the poster to return that films' *SingleMovie* page, just like on the *Genre* and *Search* pages. 
 
 ```js
 return <div>
