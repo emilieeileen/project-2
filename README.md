@@ -43,7 +43,7 @@ Search page searching for the keyword 'wonderful'
 Genre Page looking up Thrillers
 ![Genre page looking up Thrillers](src/images/genre.png)
 ## Plan
-From the beginning, we knew we wanted to work with a film API as there were many accessible and well documented APIs out there for us to be creative with. Looking at other movie database websites, we noted many had similar layouts and color themes, which led u to the decision to create something that visually stood out. Using a color pallette designed from an old Hollywood theatre, we decided on an Art-Deco, Golden Age of Hollywood design for our page. The color pallette also proved useful as the dark blue, light teal and gold tones matched well as a background for many of the movie posters on the database. We also found the PoiretOne font fit in perfectly with our theme, giving our website a vintage, classic feel while showing the latest modern films.
+From the beginning, we knew we wanted to work with a film API as there were many accessible and well documented APIs out there for us to be creative with. Looking at other movie database websites, we noted many had similar layouts and color themes, which led to the decision to create something that visually stood out. Using a color pallette designed from an old Hollywood theatre, we decided on an Art-Deco, Golden Age of Hollywood design for our page. The color pallette also proved useful as the dark blue, light teal and gold tones matched well as a background for many of the movie posters on the database. We also found the PoiretOne font fit in perfectly with our theme, giving our website a vintage, classic feel while showing the latest modern films.
 
 ## Functionality
 The web app uses React to display the films in a flex wrap grid. Users can click on a film poster to see the information about each individual film. On that page, users may select **Similar Films** which will bring them to a new page that displays all films related to the previous film.
@@ -88,7 +88,7 @@ const Home = () => {
 }
 ```
 
-### Search & Genres
+### Search page & Genres page
 While TMDB has many endpoints to filter films, we decided to focus on two categories, genres and keywords. Originally, we attempted to hav both of these filters on one Search pag, but given the nature of the endpoints, we separated them into two pages. 
 
 To filter the genre, we created a dropdown menu which list all the genres. Each genre had a numerical value, which corresponded to the id number given by the database. When the page first loads, we have an axios request fetch the basic *Discover* endpoint, showing films by popularity ranking. As the user selects a genre, the APIUrl changes so only films frm that genre are shown. 
